@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEZDRY PRO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"><span>DEZ</span>DRY</div>
+        <nav>
+            <button onclick="showPage('home')">Главная</button>
+            <button onclick="showPage('prices')">Цены</button>
+            <button onclick="showPage('reviews-page')">Отзывы</button>
+        </nav>
+    </header>
+
+    <main id="page-home" class="page active">
+        <section class="hero">
+            <h1>СМЕРТЬ <span class="orange">ТАРАКАНАМ</span></h1>
+            <button class="btn-mega" onclick="showPage('prices')">ЦЕНЫ</button>
+        </section>
+    </main>
+
+    <main id="page-prices" class="page">
+        <div class="price-grid">
+            <div class="price-item">
+                <h2>Дезинсекция</h2>
+                <p>Квартира: от 2000₽</p>
+                <button class="btn-order" onclick="openOrderModal('Дезинсекция')">Заказать</button>
+            </div>
+        </div>
+    </main>
+
+    <main id="page-reviews-page" class="page">
+        <div class="reviews-slider">
+            <div class="track" id="reviews-track"></div>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal">
+            <div id="form-step">
+                <h3>Оформить заказ</h3>
+                <input type="tel" id="phone" placeholder="Ваш телефон" class="m-input">
+                <button class="btn-mega" onclick="submitFinalOrder()">ОТПРАВИТЬ</button>
+                <button onclick="closeOrderModal()">Закрыть</button>
+            </div>
+            <div id="success-step" style="display:none">
+                <h2>ПРИНЯТО!</h2>
+                <p>Мы перезвоним вам в ближайшее время.</p>
+                <button onclick="closeOrderModal()">ОК</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
